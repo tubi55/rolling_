@@ -1,0 +1,103 @@
+@charset "utf-8";
+@import 'reset';
+
+#wrap{
+    width:100%; 
+    height:100vh; 
+    position:relative; 
+    overflow: hidden;
+    background:url(../img/bg1.jpg) no-repeat center/cover; 
+
+    .typo{
+        position:absolute; 
+        left:50%; 
+        top:50%; 
+        transform:translate(-50%,-60%) scale(0.7); 
+    }
+
+    #banner{
+        width:100%; 
+        position:absolute; 
+        bottom:10%; 
+        left:0; 
+        background:rgba(0,0,0,0.8);
+
+        .list{
+            
+            li{
+                width:240px;  float:left; 
+                opacity:0.3; 
+                transition:0.5s; 
+                font-size:0; 
+
+                a{
+                    img{
+                        width:100%; 
+                    }
+                }
+
+                &:hover{
+                    opacity:1; 
+                }
+            }
+        }
+
+        .prev{
+            position:absolute; 
+            left:-120px;  
+            top:50%; 
+            transform:translateY(-50%); 
+            transition:0.5s; 
+            opacity:0; 
+        }
+        .next{
+            position:absolute; 
+            right:-120px; 
+            top:50%; 
+            transform:translateY(-50%); 
+            transition:0.5s; 
+            opacity:0; 
+        }
+
+        //배너에 호버했을 때 
+        &:hover{
+            .prev{
+                left:20px; opacity:1; 
+            }
+            .next{
+                right:20px; opacity:1; 
+            }
+        }
+    }
+}
+
+
+aside{
+    width:100%; 
+    height:100vh; 
+    position:fixed; 
+    top:0; left:0; 
+    background:rgba(0,0,0,0.9); 
+    padding:5vw; 
+    box-sizing:border-box; 
+    opacity:0; 
+    
+    .pic{
+        width:100%; 
+        height:100%; 
+        overflow:hidden; 
+
+        img{
+            width:100%; height:100%; 
+            object-fit:cover; 
+        }
+    }
+    span{
+        position:absolute; 
+        top:40px; 
+        right:40px; 
+        font:bold 12px/1 'arial'; 
+        color:#fff; 
+        cursor: pointer;
+    }
+}
